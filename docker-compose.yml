@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   regcloud-exporter:
-    build: .
+    build: src/
     ports:
       - "${REGCLOUD_HTTP_PORT}:${REGCLOUD_HTTP_PORT}"
     env_file:
