@@ -1,8 +1,10 @@
-version: "3.8"
 services:
-  regcloud-exporter:
-    build: src/
+  http_exporter:
+    image: local/mrdan4es/http_exporter
     ports:
-      - "${REGCLOUD_HTTP_PORT}:${REGCLOUD_HTTP_PORT}"
+      - "322:322"
+    volumes:
+      - ./config.example.yml:/tmp/config.yml
+    command: ["--config", "/tmp/config.yml"]
     env_file:
-      - .env
+      - .env.example
