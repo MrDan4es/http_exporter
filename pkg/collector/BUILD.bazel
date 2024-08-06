@@ -1,0 +1,14 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "collector",
+    srcs = ["collector.go"],
+    importpath = "github.com/mrdan4es/http_exporter/pkg/collector",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/config",
+        "@com_github_jmespath_go_jmespath//:go-jmespath",
+        "@com_github_prometheus_client_golang//prometheus",
+        "@com_github_rs_zerolog//:zerolog",
+    ],
+)

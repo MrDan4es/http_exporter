@@ -1,0 +1,17 @@
+load("@gazelle//:def.bzl", "gazelle")
+load("@rules_oci//oci:defs.bzl", "oci_push", "oci_tarball")
+
+gazelle(name = "gazelle")
+
+oci_tarball(
+    name = "bundle",
+    image = "//cmd/http_exporter:oci",
+    repo_tags = ["local/mrdan4es/http_exporter:latest"],
+)
+
+oci_push(
+    name = "push",
+    image = "//cmd/http_exporter:oci",
+    remote_tags = ["latest"],
+    repository = "ghcr.io/mrdan4es/http_exporter",
+)

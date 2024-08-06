@@ -1,0 +1,25 @@
+HTTP:
+  listenAddr: ":322"
+
+collectors:
+  - name: cloud_reg_ru
+    url: https://api.cloudvps.reg.ru/v1/balance_data
+    auth:
+      method: bearer
+      token: ${COLLECTORS_CLOUD_REG_RU_AUTH_TOKEN}
+    fields:
+      - name: balance
+        description: Balance
+        query:  balance_data.balance
+      - name: hours_left
+        description: Hours left
+        query: balance_data.hours_left
+  - name: selectel
+    url: https://api.selectel.ru/v3/balances
+    auth:
+      method: x-token
+      token: ${COLLECTORS_SELECTEL_AUTH_TOKEN}
+    fields:
+      - name: balance
+        description: Balance
+        query: data.billings[0].final_sum

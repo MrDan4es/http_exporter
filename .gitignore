@@ -1,5 +1,14 @@
-# Environment
-.env
-
-# Golang
-go.sum
+#----Environment----
+/**/.env
+#-------------------
+#-----Intellij------
+.idea/
+.idea_modules/
+#-------------------
+#-------Bazel-------
+bazel-*
+.ijwb
+#-------------------
+#-------VSCode------
+.vscode
+#-------------------
