@@ -1,11 +1,11 @@
-name: on_push_main_stage
+name: on_push_main
 
 on:
   push:
     branches: [main]
 
 jobs:
-  update_stage:
+  update_package:
     runs-on: ubuntu-latest
     permissions:
       contents: read

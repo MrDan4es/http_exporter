@@ -1,6 +1,6 @@
 services:
   http_exporter:
-    image: local/mrdan4es/http_exporter
+    image: ghcr.io/mrdan4es/http_exporter:latest
     ports:
       - "322:322"
     volumes:
